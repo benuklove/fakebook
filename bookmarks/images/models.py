@@ -16,6 +16,7 @@ class Image(models.Model):
     description = models.TextField(blank=True)
     created = models.DateField(auto_now_add=True, db_index=True)
 
+    # Override Model's save method
     def save(self, *args, **kwargs):
         if not self.slug:
             self.slug = slugify(self.title)

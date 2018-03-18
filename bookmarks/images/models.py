@@ -21,5 +21,9 @@ class Image(models.Model):
             self.slug = slugify(self.title)
             super().save(*args, **kwargs)
 
+    users_like = models.ManyToManyField(settings.AUTH_USER_MODEL,
+                                        related_name='images_liked',
+                                        blank=True)
+
     def __str__(self):
         return self.title

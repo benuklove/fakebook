@@ -24,6 +24,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     # url(r'^admin/', include(admin.site.urls)),
     url(r'^account/', include('account.urls')),
+    url(r'^images/', include('images.urls')),  # , namespace='images')),
 ]
 
 # For dev only.  Never serve static files with Django
